@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kode Etik Personal Profesi IT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+      * {
+        font-family: "Inter", sans-serif;
+      }
+
+      .content-section {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.5s ease forwards;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .sidebar-item {
+        transition: all 0.3s ease;
+      }
+
+      .sidebar-item:hover {
+        transform: translateX(4px);
+      }
+
+      @media (min-width: 768px) {
+        .sidebar-item:hover {
+          transform: translateX(8px);
+        }
+      }
+
+      .sidebar-item.active {
+        font-weight: 600;
+      }
+
+      .chapter-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        text-align: center;
+        font-weight: 700;
+        margin-right: 8px;
+        flex-shrink: 0;
+      }
+
+      @media (min-width: 640px) {
+        .chapter-number {
+          width: 32px;
+          height: 32px;
+          margin-right: 12px;
+        }
+      }
+
+      .principle-card {
+        border-left: 3px solid;
+        transition: all 0.3s ease;
+      }
+
+      @media (min-width: 768px) {
+        .principle-card {
+          border-left-width: 4px;
+        }
+      }
+
+      .principle-card:hover {
+        transform: translateX(4px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (min-width: 768px) {
+        .principle-card:hover {
+          transform: translateX(8px);
+        }
+      }
+
+      .print-btn {
+        transition: all 0.3s ease;
+      }
+
+      .print-btn:hover {
+        transform: scale(1.05);
+      }
+
+      .print-btn:active {
+        transform: scale(0.98);
+      }
+
+      @media print {
+        .no-print {
+          display: none !important;
+        }
+        .print-section {
+          page-break-inside: avoid;
+        }
+      }
+
+      .scrollbar-thin::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      @media (min-width: 768px) {
+        .scrollbar-thin::-webkit-scrollbar {
+          width: 8px;
+        }
+      }
+
+      .scrollbar-thin::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      .scrollbar-thin::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+      }
+
+      .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      /* Improved responsive text */
+      .responsive-title {
+        font-size: clamp(1.25rem, 4vw, 2.5rem);
+      }
+
+      .responsive-subtitle {
+        font-size: clamp(0.875rem, 2vw, 1.25rem);
+      }
+
+      .responsive-body {
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+      }
+    </style>
+    <style>
+      @view-transition {
+        navigation: auto;
+      }
+    </style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+    <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+  </head>
+  <body class="h-full bg-gray-50">
+    <div id="app" class="h-full w-full overflow-auto">
+      <!-- Header -->
+      <header class="no-print sticky top-0 z-50 bg-blue-800 text-white shadow-md">
+        <div class="px-3 sm:px-4 md:px-6 py-2.5 sm:py-3 md:py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-3">
+          <div class="flex items-center space-x-2 sm:space-x-3 md:space-x-4 w-full sm:w-auto">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 flex-shrink-0" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div class="flex-1 min-w-0">
+              <h1 class="text-sm sm:text-base md:text-lg lg:text-xl font-bold leading-tight truncate">Kode Etik Personal Profesi IT</h1>
+              <p class="text-xs sm:text-sm opacity-80 hidden sm:block truncate">Software Developer Professional Ethics</p>
+            </div>
+          </div>
+          <button
+            id="printBtn"
+            class="print-btn bg-white text-blue-800 border-2 border-blue-800 px-3 sm:px-4 md:px-6 py-2 md:py-2.5 rounded-lg font-semibold flex items-center justify-center space-x-2 shadow-lg text-xs sm:text-sm md:text-base w-full sm:w-auto whitespace-nowrap"
+          >
+            <svg class="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"
+              /></svg
+            ><span>Cetak PDF</span>
+          </button>
+        </div>
+      </header>
+      <div class="flex flex-col md:flex-row h-full">
+        <!-- Sidebar -->
+        <aside class="no-print w-full md:w-72 lg:w-80 bg-white border-b md:border-b-0 md:border-r border-blue-500 overflow-y-auto scrollbar-thin md:h-auto max-h-48 sm:max-h-56 md:max-h-none">
+          <nav class="p-2 sm:p-3 md:p-4 lg:p-6 space-y-0.5 sm:space-y-1 md:space-y-2">
+            <a href="#cover" class="sidebar-item block px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-3 rounded-lg cursor-pointer text-gray-800 hover:bg-gray-100 hover:text-blue-600">
+              <div class="flex items-center">
+                <span class="chapter-number bg-blue-600 text-white text-sm sm:text-base">📄</span> <span class="text-xs sm:text-sm md:text-base truncate">Halaman Judul</span>
+              </div></a
+            >
+            <a href="#kata-pengantar" class="sidebar-item block px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-3 rounded-lg cursor-pointer text-gray-800 hover:bg-gray-100 hover:text-blue-600">
+              <div class="flex items-center">
+                <span class="chapter-number bg-blue-600 text-white text-sm sm:text-base">✍️</span> <span class="text-xs sm:text-sm md:text-base truncate">Kata Pengantar</span>
+              </div></a
+            >
+            <a href="#daftar-isi" class="sidebar-item block px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-3 rounded-lg cursor-pointer text-gray-800 hover:bg-gray-100 hover:text-blue-600">
+              <div class="flex items-center">
+                <span class="chapter-number bg-blue-600 text-white text-sm sm:text-base">📋</span> <span class="text-xs sm:text-sm md:text-base truncate">Daftar Isi</span>
+              </div></a
+            >
+            <a href="#bab1" class="sidebar-item block px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-3 rounded-lg cursor-pointer text-gray-800 hover:bg-gray-100 hover:text-blue-600">
+              <div class="flex items-center">
+                <span class="chapter-number bg-blue-600 text-white text-xs sm:text-sm">I</span> <span class="text-xs sm:text-sm md:text-base truncate">Pendahuluan</span>
+              </div></a
+            >
+            <a href="#bab2" class="sidebar-item block px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-3 rounded-lg cursor-pointer text-gray-800 hover:bg-gray-100 hover:text-blue-600">
+              <div class="flex items-center">
+                <span class="chapter-number bg-blue-600 text-white text-xs sm:text-sm">II</span> <span class="text-xs sm:text-sm md:text-base truncate">Gambaran Profesi</span>
+              </div></a
+            >
+            <a href="#bab3" class="sidebar-item block px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-3 rounded-lg cursor-pointer text-gray-800 hover:bg-gray-100 hover:text-blue-600">
+              <div class="flex items-center">
+                <span class="chapter-number bg-blue-600 text-white text-xs sm:text-sm">III</span> <span class="text-xs sm:text-sm md:text-base truncate">Deskripsi Kasus Etika</span>
+              </div></a
+            >
+            <a href="#bab4" class="sidebar-item block px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-3 rounded-lg cursor-pointer text-gray-800 hover:bg-gray-100 hover:text-blue-600">
+              <div class="flex items-center">
+                <span class="chapter-number bg-blue-600 text-white text-xs sm:text-sm">IV</span> <span class="text-xs sm:text-sm md:text-base truncate">Pembahasan</span>
+              </div></a
+            >
+            <a href="#bab5" class="sidebar-item block px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-3 rounded-lg cursor-pointer text-gray-800 hover:bg-gray-100 hover:text-blue-600">
+              <div class="flex items-center">
+                <span class="chapter-number bg-blue-600 text-white text-xs sm:text-sm">V</span> <span class="text-xs sm:text-sm md:text-base truncate">Kesimpulan</span>
+              </div></a
+            >
+            <a href="#daftar-pustaka" class="sidebar-item block px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-3 rounded-lg cursor-pointer text-gray-800 hover:bg-gray-100 hover:text-blue-600">
+              <div class="flex items-center">
+                <span class="chapter-number bg-blue-600 text-white text-sm sm:text-base">📚</span> <span class="text-xs sm:text-sm md:text-base truncate">Daftar Pustaka</span>
+              </div></a
+            >
+          </nav>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto scrollbar-thin bg-gray-50">
+          <div class="max-w-4xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 md:py-8 lg:py-12">
+            <!-- Cover Page -->
+            <section id="cover" class="content-section print-section min-h-screen flex items-center justify-center mb-6 sm:mb-8 md:mb-12 lg:mb-16">
+              <div class="text-center space-y-3 sm:space-y-4 md:space-y-6 lg:space-y-8 px-3">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center shadow-lg">
+                  <svg class="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12" viewbox="0 0 24 24" fill="none">
+                    <path
+                      d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h1 class="responsive-title font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">KODE ETIK PERSONAL DALAM PROFESI SOFTWARE DEVELOPER</h1>
+                  <p class="responsive-subtitle text-gray-600 max-w-2xl mx-auto">Membangun Integritas dan Tanggung Jawab Profesional di Era Digital</p>
+                </div>
+                <div class="space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-6 pt-3 sm:pt-4 md:pt-6 lg:pt-8">
+                  <div class="space-y-1 sm:space-y-1.5 md:space-y-2">
+                    <p class="text-xs sm:text-sm md:text-base font-semibold text-gray-600">Disusun Oleh:</p>
+                    <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-800">[Nama Mahasiswa]</p>
+                    <p class="text-xs sm:text-sm md:text-base lg:text-lg text-gray-700">NIM: [Nomor Induk Mahasiswa]</p>
+                  </div>
+                  <div class="space-y-1 sm:space-y-1.5 md:space-y-2 pt-2 sm:pt-2 md:pt-3 lg:pt-4">
+                    <p class="text-xs sm:text-sm md:text-base font-semibold text-gray-600">Dosen Pengampu:</p>
+                    <p class="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-800">[Nama Dosen]</p>
+                  </div>
+                  <div class="space-y-1 sm:space-y-1.5 md:space-y-2 pt-2 sm:pt-2 md:pt-3 lg:pt-4">
+                    <p class="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-gray-800">Program Studi Sistem Informasi</p>
+                    <p class="text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-gray-800">[Nama Universitas]</p>
+                    <p class="text-xs sm:text-sm md:text-base lg:text-lg text-gray-700">Tahun Akademik 2025/2026</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- Kata Pengantar -->
+            <section id="kata-pengantar" class="content-section print-section mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+              <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 md:mb-6 pb-2 md:pb-3 border-b-4 border-blue-600 text-gray-800">KATA PENGANTAR</h2>
+              <div class="space-y-3 sm:space-y-3.5 md:space-y-4 text-justify leading-relaxed responsive-body text-gray-700">
+                <p>
+                  Puji syukur kehadirat Tuhan Yang Maha Esa atas segala rahmat dan karunia-Nya sehingga penulis dapat menyelesaikan makalah yang berjudul "Kode Etik Personal dalam Profesi Software
+                  Developer: Membangun Integritas dan Tanggung Jawab Profesional di Era Digital".
+                </p>
+                <p>
+                  Makalah ini disusun sebagai upaya untuk memahami pentingnya etika profesional dalam dunia teknologi informasi, khususnya dalam profesi software developer. Di tengah pesatnya
+                  perkembangan teknologi dan digitalisasi, kebutuhan akan panduan etika yang jelas menjadi semakin krusial untuk memastikan pengembangan teknologi yang bertanggung jawab dan bermanfaat
+                  bagi masyarakat.
+                </p>
+                <p>
+                  Penulis menyadari bahwa makalah ini masih jauh dari sempurna. Oleh karena itu, kritik dan saran yang membangun sangat penulis harapkan untuk perbaikan di masa mendatang. Semoga
+                  makalah ini dapat memberikan manfaat bagi pembaca, khususnya bagi para mahasiswa dan praktisi di bidang teknologi informasi.
+                </p>
+                <div class="pt-6 sm:pt-8 text-right text-sm sm:text-base">
+                  <p class="mb-2">Jakarta, Desember 2024</p>
+                  <p class="font-semibold mt-12 sm:mt-14 md:mt-16">Penulis</p>
+                </div>
+              </div>
+            </section>
+            <!-- Daftar Isi -->
+            <section id="daftar-isi" class="content-section print-section mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+              <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 md:mb-6 pb-2 md:pb-3 border-b-4 border-blue-600 text-gray-800">DAFTAR ISI</h2>
+              <div class="space-y-2 sm:space-y-2.5 md:space-y-3 text-xs sm:text-sm md:text-base">
+                <div class="flex justify-between items-center py-1.5 sm:py-2 border-b border-dashed border-gray-300">
+                  <span class="font-semibold text-gray-800">HALAMAN JUDUL</span> <span class="font-mono text-gray-600">i</span>
+                </div>
+                <div class="flex justify-between items-center py-1.5 sm:py-2 border-b border-dashed border-gray-300">
+                  <span class="font-semibold text-gray-800">KATA PENGANTAR</span> <span class="font-mono text-gray-600">ii</span>
+                </div>
+                <div class="flex justify-between items-center py-1.5 sm:py-2 border-b border-dashed border-gray-300">
+                  <span class="font-semibold text-gray-800">DAFTAR ISI</span> <span class="font-mono text-gray-600">iii</span>
+                </div>
+                <div class="mt-4 sm:mt-5 md:mt-6">
+                  <div class="flex justify-between items-center py-1.5 sm:py-2 border-b border-dashed border-gray-300">
+                    <span class="font-bold text-gray-800">BAB I: PENDAHULUAN</span> <span class="font-mono text-gray-600">1</span>
+                  </div>
+                  <div class="flex justify-between items-center py-1.5 sm:py-2 pl-4 sm:pl-5 md:pl-6 border-b border-dashed border-gray-300 text-gray-700">
+                    <span>1.1 Latar Belakang</span> <span class="font-mono text-gray-600">1</span>
+                  </div>
+                  <div class="flex justify-between items-center py-1.5 sm:py-2 pl-4 sm:pl-5 md:pl-6 border-b border-dashed border-gray-300 text-gray-700">
+                    <span>1.2 Rumusan Masalah</span> <span class="font-mono text-gray-600">2</span>
+                  </div>
+                  <div class="flex justify-between items-center py-1.5 sm:py-2 pl-4 sm:pl-5 md:pl-6 border-b border-dashed border-gray-300 text-gray-700">
+                    <span>1.3 Tujuan Observasi</span> <span class="font-mono text-gray-600">2</span>
+                  </div>
+                  <div class="flex justify-between items-center py-1.5 sm:py-2 pl-4 sm:pl-5 md:pl-6 border-b border-dashed border-gray-300 text-gray-700">
+                    <span>1.4 Manfaat</span> <span class="font-mono text-gray-600">3</span>
+                  </div>
+                </div>
+                <div class="flex justify-between items-center py-1.5 sm:py-2 border-b border-dashed border-gray-300">
+                  <span class="font-bold text-gray-800">BAB II: GAMBARAN UMUM PROFESI</span> <span class="font-mono text-gray-600">4</span>
+                </div>
+                <div class="flex justify-between items-center py-1.5 sm:py-2 border-b border-dashed border-gray-300">
+                  <span class="font-bold text-gray-800">BAB III: DESKRIPSI KASUS ETIKA</span> <span class="font-mono text-gray-600">6</span>
+                </div>
+                <div class="flex justify-between items-center py-1.5 sm:py-2 border-b border-dashed border-gray-300">
+                  <span class="font-bold text-gray-800">BAB IV: PEMBAHASAN</span> <span class="font-mono text-gray-600">9</span>
+                </div>
+                <div class="flex justify-between items-center py-1.5 sm:py-2 border-b border-dashed border-gray-300">
+                  <span class="font-bold text-gray-800">BAB V: KESIMPULAN DAN REKOMENDASI</span> <span class="font-mono text-gray-600">17</span>
+                </div>
+                <div class="flex justify-between items-center py-1.5 sm:py-2 border-b border-dashed border-gray-300">
+                  <span class="font-bold text-gray-800">DAFTAR PUSTAKA</span> <span class="font-mono text-gray-600">19</span>
+                </div>
+              </div>
+            </section>
+            <!-- BAB I -->
+            <section id="bab1" class="content-section print-section mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+              <div class="bg-blue-800 text-white rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 mb-4 sm:mb-5 md:mb-6 lg:mb-8 shadow-lg">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 md:mb-2">BAB I</h2>
+                <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold">PENDAHULUAN</h3>
+              </div>
+              <div class="space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8">
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-2.5 md:mb-3 lg:mb-4 text-gray-800">1.1 Latar Belakang</h4>
+                  <div class="space-y-2.5 sm:space-y-3 md:space-y-4 text-justify leading-relaxed responsive-body text-gray-700">
+                    <p>
+                      Era digital telah membawa transformasi besar dalam berbagai aspek kehidupan manusia. Teknologi informasi tidak lagi menjadi sekadar alat pendukung, melainkan telah menjadi
+                      infrastruktur fundamental yang menopang hampir seluruh aktivitas masyarakat modern—mulai dari komunikasi, pendidikan, kesehatan, hingga ekonomi dan pemerintahan (Tavani, 2016).
+                    </p>
+                    <p>
+                      Software developer bertanggung jawab untuk merancang, mengembangkan, dan memelihara aplikasi serta sistem yang digunakan oleh jutaan bahkan miliaran pengguna di seluruh dunia.
+                      Keputusan teknis yang mereka ambil memiliki dampak yang luas, tidak hanya terhadap fungsionalitas sistem, tetapi juga terhadap privasi, keamanan, dan kesejahteraan pengguna
+                      (Gotterbarn et al., 1997).
+                    </p>
+                    <p>
+                      Sayangnya, dalam praktiknya, berbagai kasus pelanggaran etika di dunia IT masih kerap terjadi. Mulai dari kebocoran data pengguna akibat keamanan yang lemah, plagiarisme kode
+                      program, penggunaan data pribadi tanpa izin, hingga pengembangan fitur yang manipulatif atau adiktif (Martin, 2019).
+                    </p>
+                    <p>
+                      Makalah ini disusun dengan tujuan untuk mengeksplorasi pentingnya kode etik personal bagi seorang software developer. Melalui analisis kasus nyata dan kajian teoretis, penulis
+                      berupaya merumuskan kode etik personal yang dapat menjadi pedoman dalam menjalankan profesi di bidang pengembangan perangkat lunak (ACM, 2018).
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-2.5 md:mb-3 lg:mb-4 text-gray-800">1.2 Rumusan Masalah</h4>
+                  <div class="bg-gray-100 rounded-lg p-4 sm:p-5 md:p-6">
+                    <ol class="space-y-2 sm:space-y-2.5 md:space-y-3 text-xs sm:text-sm md:text-base text-gray-800">
+                      <li class="flex items-start">
+                        <span class="font-bold mr-2 sm:mr-3 mt-0.5 sm:mt-1 flex-shrink-0">1.</span>
+                        <span>Apa saja tantangan etika yang dihadapi oleh seorang software developer dalam menjalankan profesinya?</span>
+                      </li>
+                      <li class="flex items-start">
+                        <span class="font-bold mr-2 sm:mr-3 mt-0.5 sm:mt-1 flex-shrink-0">2.</span>
+                        <span>Bagaimana kasus-kasus pelanggaran etika dalam profesi IT dapat terjadi dan apa dampaknya?</span>
+                      </li>
+                      <li class="flex items-start">
+                        <span class="font-bold mr-2 sm:mr-3 mt-0.5 sm:mt-1 flex-shrink-0">3.</span>
+                        <span>Apa saja prinsip-prinsip etika yang harus dipegang oleh seorang software developer profesional?</span>
+                      </li>
+                      <li class="flex items-start">
+                        <span class="font-bold mr-2 sm:mr-3 mt-0.5 sm:mt-1 flex-shrink-0">4.</span>
+                        <span>Bagaimana merumuskan kode etik personal yang komprehensif dan aplikatif untuk profesi software developer?</span>
+                      </li>
+                      <li class="flex items-start">
+                        <span class="font-bold mr-2 sm:mr-3 mt-0.5 sm:mt-1 flex-shrink-0">5.</span>
+                        <span>Bagaimana cara mengimplementasikan kode etik personal dalam praktik pengembangan perangkat lunak sehari-hari?</span>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">1.3 Tujuan Observasi</h4>
+                  <div class="space-y-2 sm:space-y-2.5 md:space-y-3">
+                    <div class="flex items-start bg-white rounded-lg p-3 sm:p-3.5 md:p-4 shadow-sm">
+                      <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold mr-3 sm:mr-4 flex-shrink-0 text-sm sm:text-base">🎯</div>
+                      <p class="responsive-body text-gray-700">Mengidentifikasi tantangan etika yang sering dihadapi oleh software developer dalam praktik profesionalnya</p>
+                    </div>
+                    <div class="flex items-start bg-white rounded-lg p-3 sm:p-3.5 md:p-4 shadow-sm">
+                      <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold mr-3 sm:mr-4 flex-shrink-0 text-sm sm:text-base">🔍</div>
+                      <p class="responsive-body text-gray-700">Menganalisis kasus-kasus pelanggaran etika di dunia IT untuk memahami akar permasalahan dan dampaknya</p>
+                    </div>
+                    <div class="flex items-start bg-white rounded-lg p-3 sm:p-3.5 md:p-4 shadow-sm">
+                      <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold mr-3 sm:mr-4 flex-shrink-0 text-sm sm:text-base">📝</div>
+                      <p class="responsive-body text-gray-700">Merumuskan kode etik personal yang komprehensif dan aplikatif sebagai panduan dalam menjalankan profesi</p>
+                    </div>
+                    <div class="flex items-start bg-white rounded-lg p-3 sm:p-3.5 md:p-4 shadow-sm">
+                      <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold mr-3 sm:mr-4 flex-shrink-0 text-sm sm:text-base">💡</div>
+                      <p class="responsive-body text-gray-700">Memberikan rekomendasi praktis tentang implementasi prinsip-prinsip etika dalam pengembangan perangkat lunak</p>
+                    </div>
+                    <div class="flex items-start bg-white rounded-lg p-3 sm:p-3.5 md:p-4 shadow-sm">
+                      <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold mr-3 sm:mr-4 flex-shrink-0 text-sm sm:text-base">📢</div>
+                      <p class="responsive-body text-gray-700">Meningkatkan kesadaran tentang pentingnya etika profesional di kalangan mahasiswa dan praktisi IT</p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">1.4 Manfaat</h4>
+                  <div class="grid gap-3 sm:gap-4 md:gap-6">
+                    <div class="bg-white rounded-xl p-4 sm:p-5 md:p-6 shadow-lg">
+                      <h5 class="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 flex items-center text-gray-800"><span class="text-xl sm:text-2xl mr-2 sm:mr-3">🎓</span> Bagi Mahasiswa</h5>
+                      <ul class="space-y-1.5 sm:space-y-2 ml-8 sm:ml-9 md:ml-11 text-xs sm:text-sm md:text-base text-gray-700">
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Memperoleh pemahaman mendalam tentang pentingnya etika profesional dalam dunia IT</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Memiliki panduan praktis dalam mempersiapkan diri memasuki dunia kerja IT</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Mengembangkan karakter profesional yang berintegritas sejak dini</span></li>
+                      </ul>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 sm:p-5 md:p-6 shadow-lg">
+                      <h5 class="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 flex items-center text-gray-800">
+                        <span class="text-xl sm:text-2xl mr-2 sm:mr-3">🏛️</span> Bagi Institusi Pendidikan
+                      </h5>
+                      <ul class="space-y-1.5 sm:space-y-2 ml-8 sm:ml-9 md:ml-11 text-xs sm:text-sm md:text-base text-gray-700">
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Menjadi bahan referensi dalam pengembangan kurikulum yang mengintegrasikan aspek etika</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Mendukung pembentukan lulusan yang kompeten secara teknis dan etis</span></li>
+                      </ul>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 sm:p-5 md:p-6 shadow-lg">
+                      <h5 class="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 flex items-center text-gray-800">
+                        <span class="text-xl sm:text-2xl mr-2 sm:mr-3">🌍</span> Bagi Masyarakat dan Industri IT
+                      </h5>
+                      <ul class="space-y-1.5 sm:space-y-2 ml-8 sm:ml-9 md:ml-11 text-xs sm:text-sm md:text-base text-gray-700">
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Meningkatkan kepercayaan publik terhadap produk dan layanan teknologi</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Mendorong terciptanya standar etika yang lebih baik di industri teknologi Indonesia</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Membangun ekosistem digital yang lebih aman, adil, dan berkelanjutan</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- BAB II -->
+            <section id="bab2" class="content-section print-section mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+              <div class="bg-blue-800 text-white rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 mb-4 sm:mb-5 md:mb-6 lg:mb-8 shadow-lg">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 md:mb-2">BAB II</h2>
+                <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold">GAMBARAN UMUM PROFESI SOFTWARE DEVELOPER</h3>
+              </div>
+              <div class="space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8">
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">2.1 Definisi dan Ruang Lingkup Profesi</h4>
+                  <div class="space-y-2.5 sm:space-y-3 md:space-y-4 text-justify leading-relaxed responsive-body text-gray-700">
+                    <p>
+                      Software Developer adalah profesional yang bertanggung jawab merancang, mengembangkan, menguji, dan memelihara aplikasi perangkat lunak. Profesi ini memerlukan kombinasi
+                      keterampilan teknis yang kuat, kemampuan pemecahan masalah, serta pemahaman mendalam tentang kebutuhan pengguna dan bisnis (IEEE, 2020).
+                    </p>
+                    <p>
+                      Ruang lingkup pekerjaan software developer sangat luas, mencakup pengembangan aplikasi web, mobile, desktop, sistem embedded, game, hingga artificial intelligence dan machine
+                      learning. Setiap bidang memiliki tantangan dan kebutuhan spesifik yang memerlukan keahlian dan pendekatan yang berbeda (Rogerson &amp; Gotterbarn, 1998).
+                    </p>
+                    <p>
+                      Di era digital ini, software developer menjadi salah satu profesi yang paling dicari dan memiliki peran strategis dalam transformasi digital berbagai sektor industri—mulai dari
+                      perbankan, kesehatan, pendidikan, e-commerce, hingga pemerintahan (Tavani, 2016).
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">2.2 Kompetensi dan Keterampilan yang Dibutuhkan</h4>
+                  <div class="grid gap-3 sm:gap-4 md:gap-5">
+                    <div class="bg-white rounded-xl p-4 sm:p-5 md:p-6 shadow-lg border-l-4 border-blue-600">
+                      <h5 class="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 text-gray-800">Keterampilan Teknis (Hard Skills)</h5>
+                      <ul class="space-y-1.5 sm:space-y-2 ml-5 sm:ml-6 text-xs sm:text-sm md:text-base text-gray-700">
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Penguasaan bahasa pemrograman (Java, Python, JavaScript, C++, dll)</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Pemahaman framework dan library populer</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Database management (SQL, NoSQL)</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Version control system (Git)</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Testing dan debugging</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Keamanan siber dan best practices</span></li>
+                      </ul>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 sm:p-5 md:p-6 shadow-lg border-l-4 border-green-600">
+                      <h5 class="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 text-gray-800">Keterampilan Non-Teknis (Soft Skills)</h5>
+                      <ul class="space-y-1.5 sm:space-y-2 ml-5 sm:ml-6 text-xs sm:text-sm md:text-base text-gray-700">
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Problem solving dan analytical thinking</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Komunikasi efektif dengan tim dan stakeholder</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Kolaborasi dan teamwork</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Kemampuan belajar mandiri dan adaptasi</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Time management dan prioritas</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Kreativitas dan inovasi</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">2.3 Tanggung Jawab dan Peran Profesional</h4>
+                  <div class="space-y-2.5 sm:space-y-3 md:space-y-4 text-justify leading-relaxed responsive-body text-gray-700">
+                    <p>
+                      Software developer memiliki tanggung jawab yang sangat besar dalam ekosistem digital. Mereka tidak hanya menulis kode, tetapi juga membuat keputusan yang berdampak pada kehidupan
+                      jutaan pengguna. Keputusan desain sistem, implementasi algoritma, hingga penanganan data pengguna—semua memiliki konsekuensi etis yang signifikan (Gotterbarn et al., 1997;
+                      Vallor, 2016).
+                    </p>
+                    <div class="bg-blue-50 rounded-lg p-4 sm:p-5 md:p-6 border-l-4 border-blue-600">
+                      <h5 class="font-bold mb-2 sm:mb-3 text-sm sm:text-base md:text-lg text-gray-800">Tanggung Jawab Utama:</h5>
+                      <ul class="space-y-1.5 sm:space-y-2 ml-5 sm:ml-6 text-xs sm:text-sm md:text-base text-gray-700">
+                        <li class="flex items-start">
+                          <span class="mr-2 flex-shrink-0">1.</span> <span><strong>Kepada Pengguna:</strong> Memastikan aplikasi aman, reliable, dan user-friendly</span>
+                        </li>
+                        <li class="flex items-start">
+                          <span class="mr-2 flex-shrink-0">2.</span> <span><strong>Kepada Organisasi:</strong> Menghasilkan kode berkualitas tinggi dan maintainable</span>
+                        </li>
+                        <li class="flex items-start">
+                          <span class="mr-2 flex-shrink-0">3.</span> <span><strong>Kepada Profesi:</strong> Menjaga reputasi dan standar profesional</span>
+                        </li>
+                        <li class="flex items-start">
+                          <span class="mr-2 flex-shrink-0">4.</span> <span><strong>Kepada Masyarakat:</strong> Berkontribusi pada teknologi yang bermanfaat dan etis</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">2.4 Peluang Karir dan Spesialisasi</h4>
+                  <div class="space-y-2.5 sm:space-y-3 md:space-y-4 text-justify leading-relaxed responsive-body text-gray-700">
+                    <p>
+                      Profesi software developer menawarkan berbagai jalur karir dan spesialisasi yang menarik, dengan peluang pertumbuhan yang sangat baik. Beberapa spesialisasi populer antara lain:
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-3 sm:gap-4 md:gap-5">
+                      <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-lg p-3 sm:p-4 md:p-5">
+                        <h5 class="font-bold mb-1.5 sm:mb-2 text-sm sm:text-base text-gray-800">🌐 Web Developer</h5>
+                        <p class="text-xs sm:text-sm text-gray-700">Frontend, Backend, atau Full-stack development</p>
+                      </div>
+                      <div class="bg-gradient-to-br from-green-50 to-teal-50 rounded-lg p-3 sm:p-4 md:p-5">
+                        <h5 class="font-bold mb-1.5 sm:mb-2 text-sm sm:text-base text-gray-800">�� Mobile Developer</h5>
+                        <p class="text-xs sm:text-sm text-gray-700">iOS, Android, atau Cross-platform</p>
+                      </div>
+                      <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-lg p-3 sm:p-4 md:p-5">
+                        <h5 class="font-bold mb-1.5 sm:mb-2 text-sm sm:text-base text-gray-800">🤖 AI/ML Engineer</h5>
+                        <p class="text-xs sm:text-sm text-gray-700">Machine Learning dan Artificial Intelligence</p>
+                      </div>
+                      <div class="bg-gradient-to-br from-red-50 to-pink-50 rounded-lg p-3 sm:p-4 md:p-5">
+                        <h5 class="font-bold mb-1.5 sm:mb-2 text-sm sm:text-base text-gray-800">🔒 Security Engineer</h5>
+                        <p class="text-xs sm:text-sm text-gray-700">Cybersecurity dan Penetration Testing</p>
+                      </div>
+                      <div class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg p-3 sm:p-4 md:p-5">
+                        <h5 class="font-bold mb-1.5 sm:mb-2 text-sm sm:text-base text-gray-800">☁️ Cloud Engineer</h5>
+                        <p class="text-xs sm:text-sm text-gray-700">AWS, Azure, Google Cloud Platform</p>
+                      </div>
+                      <div class="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg p-3 sm:p-4 md:p-5">
+                        <h5 class="font-bold mb-1.5 sm:mb-2 text-sm sm:text-base text-gray-800">⚙️ DevOps Engineer</h5>
+                        <p class="text-xs sm:text-sm text-gray-700">CI/CD, Automation, Infrastructure</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- BAB III -->
+            <section id="bab3" class="content-section print-section mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+              <div class="bg-blue-800 text-white rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 mb-4 sm:mb-5 md:mb-6 lg:mb-8 shadow-lg">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 md:mb-2">BAB III</h2>
+                <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold">DESKRIPSI KASUS ETIKA</h3>
+              </div>
+              <div class="space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8">
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">3.1 Pendahuluan Kasus Etika dalam Profesi IT</h4>
+                  <div class="space-y-2.5 sm:space-y-3 md:space-y-4 text-justify leading-relaxed responsive-body text-gray-700">
+                    <p>
+                      Dalam praktik profesional, software developer sering menghadapi dilema etika yang kompleks. Keputusan yang diambil tidak hanya berdampak pada aspek teknis, tetapi juga memiliki
+                      implikasi sosial, ekonomi, dan hukum yang luas. Pemahaman tentang kasus-kasus pelanggaran etika menjadi penting untuk membangun kesadaran dan mencegah terulangnya kesalahan
+                      serupa (Johnson, 2009).
+                    </p>
+                    <p>
+                      Beberapa kasus pelanggaran etika yang umum terjadi mencakup kebocoran data pengguna, plagiarisme kode, pengembangan fitur manipulatif, pengabaian standar keamanan, hingga bias
+                      algoritma yang merugikan kelompok tertentu. Kasus-kasus ini menunjukkan pentingnya kesadaran etika dan integritas profesional dalam setiap tahap pengembangan perangkat lunak
+                      (Martin, 2019; Mittelstadt et al., 2016).
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">3.2 Studi Kasus: Kebocoran Data Pengguna</h4>
+                  <div class="bg-red-50 border-l-4 border-red-600 rounded-lg p-4 sm:p-5 md:p-6 mb-3 sm:mb-4">
+                    <h5 class="font-bold text-base sm:text-lg mb-2 sm:mb-3 text-gray-800">📋 Deskripsi Kasus</h5>
+                    <div class="space-y-2 sm:space-y-2.5 text-xs sm:text-sm md:text-base text-gray-700">
+                      <p>
+                        Sebuah perusahaan teknologi besar mengalami kebocoran data yang mempengaruhi lebih dari 50 juta pengguna. Data yang bocor mencakup informasi pribadi seperti nama, email, nomor
+                        telepon, alamat, hingga riwayat transaksi. Investigasi menemukan bahwa sistem keamanan perusahaan memiliki kerentanan yang sudah diketahui tim developer sejak enam bulan
+                        sebelumnya, namun tidak segera ditangani karena diprioritaskan untuk pengembangan fitur baru (Floridi &amp; Taddeo, 2016; European Commission, 2018).
+                      </p>
+                    </div>
+                  </div>
+                  <div class="space-y-2.5 sm:space-y-3 md:space-y-4 text-justify leading-relaxed responsive-body text-gray-700">
+                    <div class="bg-white rounded-lg p-4 sm:p-5 md:p-6 shadow-md">
+                      <h5 class="font-bold mb-2 sm:mb-3 text-sm sm:text-base md:text-lg text-gray-800">⚠️ Pelanggaran Etika yang Terjadi:</h5>
+                      <ul class="space-y-1.5 sm:space-y-2 ml-5 sm:ml-6 text-xs sm:text-sm md:text-base text-gray-700">
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Mengabaikan keamanan data pengguna demi target bisnis</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Tidak transparan tentang risiko keamanan kepada manajemen</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Menunda perbaikan kerentanan yang sudah diidentifikasi</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Tidak segera mengkomunikasikan insiden kepada pengguna</span></li>
+                      </ul>
+                    </div>
+                    <div class="bg-orange-50 rounded-lg p-4 sm:p-5 md:p-6 border-l-4 border-orange-600">
+                      <h5 class="font-bold mb-2 sm:mb-3 text-sm sm:text-base md:text-lg text-gray-800">💥 Dampak yang Ditimbulkan:</h5>
+                      <ul class="space-y-1.5 sm:space-y-2 ml-5 sm:ml-6 text-xs sm:text-sm md:text-base text-gray-700">
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Kerugian finansial bagi pengguna akibat penyalahgunaan data</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Hilangnya kepercayaan publik terhadap perusahaan</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Denda regulasi mencapai ratusan juta dollar</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Penurunan nilai saham perusahaan hingga 30%</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Kerugian reputasi jangka panjang bagi industri teknologi</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">3.3 Studi Kasus: Plagiarisme Kode dan Pelanggaran Lisensi</h4>
+                  <div class="bg-purple-50 border-l-4 border-purple-600 rounded-lg p-4 sm:p-5 md:p-6 mb-3 sm:mb-4">
+                    <h5 class="font-bold text-base sm:text-lg mb-2 sm:mb-3 text-gray-800">📋 Deskripsi Kasus</h5>
+                    <div class="space-y-2 sm:space-y-2.5 text-xs sm:text-sm md:text-base text-gray-700">
+                      <p>
+                        Seorang developer di startup teknologi menyalin source code dari proyek open-source berlisensi GPL dan menggunakannya dalam produk komersial perusahaan tanpa memberikan
+                        atribusi yang sesuai atau membuka source code produk tersebut. Pelanggaran ini terungkap ketika developer asli menemukan kemiripan kode yang mencurigakan.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="space-y-2.5 sm:space-y-3 md:space-y-4 text-justify leading-relaxed responsive-body text-gray-700">
+                    <div class="bg-white rounded-lg p-4 sm:p-5 md:p-6 shadow-md">
+                      <h5 class="font-bold mb-2 sm:mb-3 text-sm sm:text-base md:text-lg text-gray-800">⚠️ Pelanggaran Etika yang Terjadi:</h5>
+                      <ul class="space-y-1.5 sm:space-y-2 ml-5 sm:ml-6 text-xs sm:text-sm md:text-base text-gray-700">
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Mengklaim karya orang lain sebagai milik sendiri</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Melanggar ketentuan lisensi open-source</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Tidak menghormati hak cipta dan kontribusi developer lain</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Merusak trust dalam komunitas open-source</span></li>
+                      </ul>
+                    </div>
+                    <div class="bg-orange-50 rounded-lg p-4 sm:p-5 md:p-6 border-l-4 border-orange-600">
+                      <h5 class="font-bold mb-2 sm:mb-3 text-sm sm:text-base md:text-lg text-gray-800">💥 Dampak yang Ditimbulkan:</h5>
+                      <ul class="space-y-1.5 sm:space-y-2 ml-5 sm:ml-6 text-xs sm:text-sm md:text-base text-gray-700">
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Tuntutan hukum dan ganti rugi finansial</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Kerusakan reputasi developer dan perusahaan</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Kehilangan kepercayaan dari komunitas developer</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Pemboikotan produk oleh komunitas tech</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">3.4 Studi Kasus: Dark Patterns dan Manipulasi Pengguna</h4>
+                  <div class="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-4 sm:p-5 md:p-6 mb-3 sm:mb-4">
+                    <h5 class="font-bold text-base sm:text-lg mb-2 sm:mb-3 text-gray-800">📋 Deskripsi Kasus</h5>
+                    <div class="space-y-2 sm:space-y-2.5 text-xs sm:text-sm md:text-base text-gray-700">
+                      <p>
+                        Sebuah aplikasi e-commerce menggunakan dark patterns—desain interface yang dirancang untuk memanipulasi pengguna agar melakukan tindakan yang menguntungkan perusahaan.
+                        Contohnya: tombol batal langganan yang tersembunyi, checkbox yang sudah dicentang secara default untuk layanan tambahan, countdown timer palsu yang menciptakan urgency
+                        artificial, dan proses checkout yang membingungkan (Brognara et al., 2020).
+                      </p>
+                    </div>
+                  </div>
+                  <div class="space-y-2.5 sm:space-y-3 md:space-y-4 text-justify leading-relaxed responsive-body text-gray-700">
+                    <div class="bg-white rounded-lg p-4 sm:p-5 md:p-6 shadow-md">
+                      <h5 class="font-bold mb-2 sm:mb-3 text-sm sm:text-base md:text-lg text-gray-800">⚠️ Pelanggaran Etika yang Terjadi:</h5>
+                      <ul class="space-y-1.5 sm:space-y-2 ml-5 sm:ml-6 text-xs sm:text-sm md:text-base text-gray-700">
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">����</span> <span>Memanipulasi keputusan pengguna melalui desain yang menipu</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Memprioritaskan profit di atas kepentingan pengguna</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Tidak transparan dalam praktik bisnis</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Mengeksploitasi psikologi pengguna untuk keuntungan sepihak</span></li>
+                      </ul>
+                    </div>
+                    <div class="bg-orange-50 rounded-lg p-4 sm:p-5 md:p-6 border-l-4 border-orange-600">
+                      <h5 class="font-bold mb-2 sm:mb-3 text-sm sm:text-base md:text-lg text-gray-800">💥 Dampak yang Ditimbulkan:</h5>
+                      <ul class="space-y-1.5 sm:space-y-2 ml-5 sm:ml-6 text-xs sm:text-sm md:text-base text-gray-700">
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Kerugian finansial bagi pengguna yang tidak menyadari</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Hilangnya kepercayaan konsumen terhadap platform digital</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Investigasi dan sanksi dari regulator perlindungan konsumen</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Kampanye boikot dan review negatif di media sosial</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">•</span> <span>Munculnya regulasi yang lebih ketat untuk industri</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">3.5 Pembelajaran dari Kasus-Kasus Etika</h4>
+                  <div class="space-y-2.5 sm:space-y-3 md:space-y-4 text-justify leading-relaxed responsive-body text-gray-700">
+                    <p>Dari berbagai kasus di atas, dapat diambil beberapa pembelajaran penting:</p>
+                    <div class="grid gap-3 sm:gap-4 md:gap-5">
+                      <div class="bg-green-50 rounded-lg p-4 sm:p-5 md:p-6 border-l-4 border-green-600">
+                        <h5 class="font-bold mb-2 text-sm sm:text-base text-gray-800">✅ Keamanan adalah Prioritas Utama</h5>
+                        <p class="text-xs sm:text-sm text-gray-700">Data dan privasi pengguna tidak boleh dikompromikan demi target bisnis apapun.</p>
+                      </div>
+                      <div class="bg-green-50 rounded-lg p-4 sm:p-5 md:p-6 border-l-4 border-green-600">
+                        <h5 class="font-bold mb-2 text-sm sm:text-base text-gray-800">✅ Hormati Hak Cipta dan Lisensi</h5>
+                        <p class="text-xs sm:text-sm text-gray-700">Selalu berikan atribusi yang tepat dan patuhi ketentuan lisensi software yang digunakan.</p>
+                      </div>
+                      <div class="bg-green-50 rounded-lg p-4 sm:p-5 md:p-6 border-l-4 border-green-600">
+                        <h5 class="font-bold mb-2 text-sm sm:text-base text-gray-800">✅ User-Centric Design</h5>
+                        <p class="text-xs sm:text-sm text-gray-700">Desain harus membantu pengguna membuat keputusan yang informed, bukan memanipulasi mereka.</p>
+                      </div>
+                      <div class="bg-green-50 rounded-lg p-4 sm:p-5 md:p-6 border-l-4 border-green-600">
+                        <h5 class="font-bold mb-2 text-sm sm:text-base text-gray-800">✅ Transparansi dan Akuntabilitas</h5>
+                        <p class="text-xs sm:text-sm text-gray-700">Bersikap jujur tentang risiko dan segera mengkomunikasikan masalah kepada stakeholder.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- BAB IV -->
+            <section id="bab4" class="content-section print-section mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+              <div class="bg-blue-800 text-white rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 mb-4 sm:mb-5 md:mb-6 lg:mb-8 shadow-lg">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 md:mb-2">BAB IV</h2>
+                <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold">PEMBAHASAN: PRINSIP-PRINSIP KODE ETIK PERSONAL</h3>
+              </div>
+              <div class="space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8">
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">4.1 Kerangka Kode Etik Personal</h4>
+                  <div class="space-y-2.5 sm:space-y-3 md:space-y-4 text-justify leading-relaxed responsive-body text-gray-700">
+                    <p>
+                      Kode etik personal merupakan seperangkat prinsip dan nilai yang menjadi panduan dalam mengambil keputusan dan bertindak secara profesional. Sebagai software developer, kode etik
+                      personal tidak hanya melindungi diri sendiri, tetapi juga pengguna, organisasi, dan masyarakat luas dari dampak negatif teknologi (Vallor, 2016; Johnson, 2009).
+                    </p>
+                    <p>
+                      Berdasarkan analisis kasus-kasus etika dan standar profesional internasional seperti ACM Code of Ethics dan IEEE Code of Ethics, berikut adalah prinsip-prinsip kode etik personal
+                      yang komprehensif untuk profesi software developer (ACM, 2018; IEEE, 2020):
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">4.2 Prinsip 1: Integritas dan Kejujuran</h4>
+                  <div class="principle-card bg-blue-50 rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 border-blue-600 shadow-lg mb-3 sm:mb-4">
+                    <div class="flex items-start mb-3 sm:mb-4">
+                      <div
+                        class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl sm:text-3xl md:text-4xl font-bold mr-3 sm:mr-4 flex-shrink-0"
+                      >
+                        1
+                      </div>
+                      <div>
+                        <h5 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-1">Integritas dan Kejujuran</h5>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-600 italic">"Bertindak jujur dalam setiap aspek pekerjaan"</p>
+                      </div>
+                    </div>
+                    <div class="space-y-2.5 sm:space-y-3 text-xs sm:text-sm md:text-base text-gray-700">
+                      <p class="font-semibold">Komitmen Saya:</p>
+                      <ul class="space-y-1.5 sm:space-y-2 ml-5 sm:ml-6">
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Tidak pernah mengklaim pekerjaan orang lain sebagai milik saya</span></li>
+                        <li class="flex items-start">
+                          <span class="mr-2 flex-shrink-0">✓</span> <span>Memberikan atribusi yang tepat untuk semua kode, library, dan resource yang saya gunakan</span>
+                        </li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Jujur tentang kemampuan dan keterbatasan saya dalam mengerjakan suatu task</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Transparan tentang progress, risiko, dan tantangan dalam project kepada stakeholder</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Tidak memanipulasi data, hasil testing, atau laporan untuk kepentingan pribadi</span></li>
+                      </ul>
+                      <div class="bg-white rounded-lg p-3 sm:p-4 mt-3 sm:mt-4">
+                        <p class="font-semibold mb-1.5 sm:mb-2 text-gray-800">Implementasi Praktis:</p>
+                        <p>
+                          Ketika menggunakan kode dari Stack Overflow atau GitHub, saya akan selalu menambahkan komentar yang mencantumkan sumber dan link referensi. Jika ada bug atau delay dalam
+                          project, saya akan segera mengkomunikasikannya kepada tim daripada menyembunyikan masalah tersebut.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">4.3 Prinsip 2: Keamanan dan Privasi</h4>
+                  <div class="principle-card bg-red-50 rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 border-red-600 shadow-lg mb-3 sm:mb-4">
+                    <div class="flex items-start mb-3 sm:mb-4">
+                      <div
+                        class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-red-600 text-white rounded-full flex items-center justify-center text-2xl sm:text-3xl md:text-4xl font-bold mr-3 sm:mr-4 flex-shrink-0"
+                      >
+                        2
+                      </div>
+                      <div>
+                        <h5 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-1">Keamanan dan Privasi</h5>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-600 italic">"Melindungi data dan privasi pengguna"</p>
+                      </div>
+                    </div>
+                    <div class="space-y-2.5 sm:space-y-3 text-xs sm:text-sm md:text-base text-gray-700">
+                      <p class="font-semibold">Komitmen Saya:</p>
+                      <ul class="space-y-1.5 sm:space-y-2 ml-5 sm:ml-6">
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Menerapkan security best practices dalam setiap aspek development</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Memprioritaskan keamanan data pengguna di atas deadline atau target fitur</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Mengenkripsi data sensitif baik saat penyimpanan maupun transmisi</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Hanya mengumpulkan data yang benar-benar diperlukan (data minimization)</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Segera melaporkan dan memperbaiki kerentanan keamanan yang ditemukan</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Tidak pernah mengakses atau menggunakan data pengguna tanpa otorisasi yang jelas</span></li>
+                      </ul>
+                      <div class="bg-white rounded-lg p-3 sm:p-4 mt-3 sm:mt-4">
+                        <p class="font-semibold mb-1.5 sm:mb-2 text-gray-800">Implementasi Praktis:</p>
+                        <p>
+                          Menggunakan HTTPS untuk semua komunikasi, menerapkan hashing untuk password (bukan enkripsi), melakukan regular security audit, dan mengikuti prinsip least privilege dalam
+                          database access. Jika menemukan vulnerability, saya akan segera membuat incident report dan mengusulkan hotfix tanpa menunggu sprint cycle berikutnya (European Commission,
+                          2018; Floridi &amp; Taddeo, 2016).
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">4.4 Prinsip 3: Kualitas dan Profesionalisme</h4>
+                  <div class="principle-card bg-green-50 rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 border-green-600 shadow-lg mb-3 sm:mb-4">
+                    <div class="flex items-start mb-3 sm:mb-4">
+                      <div
+                        class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-green-600 text-white rounded-full flex items-center justify-center text-2xl sm:text-3xl md:text-4xl font-bold mr-3 sm:mr-4 flex-shrink-0"
+                      >
+                        3
+                      </div>
+                      <div>
+                        <h5 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-1">Kualitas dan Profesionalisme</h5>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-600 italic">"Menghasilkan karya berkualitas tinggi"</p>
+                      </div>
+                    </div>
+                    <div class="space-y-2.5 sm:space-y-3 text-xs sm:text-sm md:text-base text-gray-700">
+                      <p class="font-semibold">Komitmen Saya:</p>
+                      <ul class="space-y-1.5 sm:space-y-2 ml-5 sm:ml-6">
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Menulis kode yang clean, readable, dan well-documented</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Melakukan testing yang komprehensif sebelum deployment</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Mengikuti coding standards dan best practices yang ditetapkan tim</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Melakukan code review dengan konstruktif dan menerima feedback dengan terbuka</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Terus belajar dan meningkatkan keterampilan teknis dan non-teknis</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Tidak mengambil jalan pintas yang bisa merusak kualitas produk jangka panjang</span></li>
+                      </ul>
+                      <div class="bg-white rounded-lg p-3 sm:p-4 mt-3 sm:mt-4">
+                        <p class="font-semibold mb-1.5 sm:mb-2 text-gray-800">Implementasi Praktis:</p>
+                        <p>
+                          Menerapkan prinsip DRY (Don't Repeat Yourself), SOLID principles, dan design patterns yang sesuai. Menulis unit tests dengan minimum 80% code coverage. Membuat dokumentasi
+                          API yang lengkap. Mengikuti workshop, webinar, atau online course minimal satu kali per bulan untuk skill development.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">4.5 Prinsip 4: Tanggung Jawab Sosial</h4>
+                  <div class="principle-card bg-purple-50 rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 border-purple-600 shadow-lg mb-3 sm:mb-4">
+                    <div class="flex items-start mb-3 sm:mb-4">
+                      <div
+                        class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-purple-600 text-white rounded-full flex items-center justify-center text-2xl sm:text-3xl md:text-4xl font-bold mr-3 sm:mr-4 flex-shrink-0"
+                      >
+                        4
+                      </div>
+                      <div>
+                        <h5 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-1">Tanggung Jawab Sosial</h5>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-600 italic">"Berkontribusi positif bagi masyarakat"</p>
+                      </div>
+                    </div>
+                    <div class="space-y-2.5 sm:space-y-3 text-xs sm:text-sm md:text-base text-gray-700">
+                      <p class="font-semibold">Komitmen Saya:</p>
+                      <ul class="space-y-1.5 sm:space-y-2 ml-5 sm:ml-6">
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Mempertimbangkan dampak sosial dari teknologi yang saya kembangkan</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Menolak mengembangkan fitur atau sistem yang dapat merugikan masyarakat</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Memastikan produk dapat diakses oleh semua orang (accessibility)</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Menghindari bias dan diskriminasi dalam algoritma dan sistem</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Berkontribusi pada open-source community dan berbagi pengetahuan</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Mengadvokasi praktik sustainable development yang ramah lingkungan</span></li>
+                      </ul>
+                      <div class="bg-white rounded-lg p-3 sm:p-4 mt-3 sm:mt-4">
+                        <p class="font-semibold mb-1.5 sm:mb-2 text-gray-800">Implementasi Praktis:</p>
+                        <p>
+                          Menerapkan WCAG 2.1 guidelines untuk accessibility. Melakukan bias testing pada ML models dengan diverse datasets. Mengoptimalkan kode untuk efisiensi energy consumption.
+                          Berkontribusi pada open-source projects dan menulis technical blog untuk knowledge sharing (Mittelstadt et al., 2016; Vallor, 2016).
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">4.6 Prinsip 5: Transparansi dan Akuntabilitas</h4>
+                  <div class="principle-card bg-yellow-50 rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 border-yellow-600 shadow-lg mb-3 sm:mb-4">
+                    <div class="flex items-start mb-3 sm:mb-4">
+                      <div
+                        class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-yellow-600 text-white rounded-full flex items-center justify-center text-2xl sm:text-3xl md:text-4xl font-bold mr-3 sm:mr-4 flex-shrink-0"
+                      >
+                        5
+                      </div>
+                      <div>
+                        <h5 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-1">Transparansi dan Akuntabilitas</h5>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-600 italic">"Bertanggung jawab atas keputusan dan tindakan"</p>
+                      </div>
+                    </div>
+                    <div class="space-y-2.5 sm:space-y-3 text-xs sm:text-sm md:text-base text-gray-700">
+                      <p class="font-semibold">Komitmen Saya:</p>
+                      <ul class="space-y-1.5 sm:space-y-2 ml-5 sm:ml-6">
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Mendokumentasikan keputusan teknis penting dan alasannya</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Mengakui kesalahan dengan cepat dan bertanggung jawab memperbaikinya</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Mengkomunikasikan risiko dan limitation sistem kepada stakeholder</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Membuat changelog yang jelas untuk setiap release</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Terbuka menerima feedback dan willing to improve</span></li>
+                      </ul>
+                      <div class="bg-white rounded-lg p-3 sm:p-4 mt-3 sm:mt-4">
+                        <p class="font-semibold mb-1.5 sm:mb-2 text-gray-800">Implementasi Praktis:</p>
+                        <p>
+                          Membuat Architecture Decision Records (ADR) untuk dokumentasi keputusan penting. Melakukan post-mortem analysis setelah incident. Membuat user-facing changelog yang mudah
+                          dipahami non-technical users. Menyediakan support channel yang responsif untuk user feedback.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">4.7 Prinsip 6: Kolaborasi dan Respect</h4>
+                  <div class="principle-card bg-indigo-50 rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 border-indigo-600 shadow-lg mb-3 sm:mb-4">
+                    <div class="flex items-start mb-3 sm:mb-4">
+                      <div
+                        class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center text-2xl sm:text-3xl md:text-4xl font-bold mr-3 sm:mr-4 flex-shrink-0"
+                      >
+                        6
+                      </div>
+                      <div>
+                        <h5 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-1">Kolaborasi dan Respect</h5>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-600 italic">"Bekerja sama dengan saling menghormati"</p>
+                      </div>
+                    </div>
+                    <div class="space-y-2.5 sm:space-y-3 text-xs sm:text-sm md:text-base text-gray-700">
+                      <p class="font-semibold">Komitmen Saya:</p>
+                      <ul class="space-y-1.5 sm:space-y-2 ml-5 sm:ml-6">
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Menghormati pendapat dan perspektif rekan kerja yang berbeda</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Memberikan feedback yang konstruktif dan respectful</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Membantu junior developer untuk berkembang dan belajar</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Menolak segala bentuk diskriminasi, harassment, atau bullying</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Berkomunikasi dengan jelas, empati, dan profesional</span></li>
+                        <li class="flex items-start"><span class="mr-2 flex-shrink-0">✓</span> <span>Menghargai work-life balance tim dan tidak mendorong toxic productivity</span></li>
+                      </ul>
+                      <div class="bg-white rounded-lg p-3 sm:p-4 mt-3 sm:mt-4">
+                        <p class="font-semibold mb-1.5 sm:mb-2 text-gray-800">Implementasi Praktis:</p>
+                        <p>
+                          Menggunakan sandwich method dalam code review (positive-improvement-positive). Membuat time untuk pair programming dengan junior developers. Menghindari late-night messages
+                          kecuali emergency. Aktif listening dalam meeting dan menghargai kontribusi semua anggota tim terlepas dari senioritas.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">4.8 Ringkasan Kode Etik Personal</h4>
+                  <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 shadow-lg">
+                    <h5 class="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-center text-gray-800">⚖️ Kode Etik Personal Software Developer</h5>
+                    <div class="grid sm:grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm md:text-base">
+                      <div class="bg-white rounded-lg p-3 sm:p-4 shadow">
+                        <div class="flex items-center mb-1.5 sm:mb-2">
+                          <span class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-2 sm:mr-3 flex-shrink-0 text-sm sm:text-base">1</span>
+                          <span class="font-bold text-gray-800">Integritas &amp; Kejujuran</span>
+                        </div>
+                        <p class="text-gray-600 ml-9 sm:ml-11">Bertindak jujur dalam setiap aspek</p>
+                      </div>
+                      <div class="bg-white rounded-lg p-3 sm:p-4 shadow">
+                        <div class="flex items-center mb-1.5 sm:mb-2">
+                          <span class="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold mr-2 sm:mr-3 flex-shrink-0 text-sm sm:text-base">2</span>
+                          <span class="font-bold text-gray-800">Keamanan &amp; Privasi</span>
+                        </div>
+                        <p class="text-gray-600 ml-9 sm:ml-11">Melindungi data pengguna</p>
+                      </div>
+                      <div class="bg-white rounded-lg p-3 sm:p-4 shadow">
+                        <div class="flex items-center mb-1.5 sm:mb-2">
+                          <span class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold mr-2 sm:mr-3 flex-shrink-0 text-sm sm:text-base">3</span>
+                          <span class="font-bold text-gray-800">Kualitas &amp; Profesionalisme</span>
+                        </div>
+                        <p class="text-gray-600 ml-9 sm:ml-11">Menghasilkan karya berkualitas</p>
+                      </div>
+                      <div class="bg-white rounded-lg p-3 sm:p-4 shadow">
+                        <div class="flex items-center mb-1.5 sm:mb-2">
+                          <span class="w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold mr-2 sm:mr-3 flex-shrink-0 text-sm sm:text-base">4</span>
+                          <span class="font-bold text-gray-800">Tanggung Jawab Sosial</span>
+                        </div>
+                        <p class="text-gray-600 ml-9 sm:ml-11">Berkontribusi positif</p>
+                      </div>
+                      <div class="bg-white rounded-lg p-3 sm:p-4 shadow">
+                        <div class="flex items-center mb-1.5 sm:mb-2">
+                          <span class="w-8 h-8 bg-yellow-600 text-white rounded-full flex items-center justify-center font-bold mr-2 sm:mr-3 flex-shrink-0 text-sm sm:text-base">5</span>
+                          <span class="font-bold text-gray-800">Transparansi &amp; Akuntabilitas</span>
+                        </div>
+                        <p class="text-gray-600 ml-9 sm:ml-11">Bertanggung jawab penuh</p>
+                      </div>
+                      <div class="bg-white rounded-lg p-3 sm:p-4 shadow">
+                        <div class="flex items-center mb-1.5 sm:mb-2">
+                          <span class="w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold mr-2 sm:mr-3 flex-shrink-0 text-sm sm:text-base">6</span>
+                          <span class="font-bold text-gray-800">Kolaborasi &amp; Respect</span>
+                        </div>
+                        <p class="text-gray-600 ml-9 sm:ml-11">Bekerja dengan saling menghormati</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- BAB V -->
+            <section id="bab5" class="content-section print-section mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+              <div class="bg-blue-800 text-white rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 mb-4 sm:mb-5 md:mb-6 lg:mb-8 shadow-lg">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 md:mb-2">BAB V</h2>
+                <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold">KESIMPULAN DAN REKOMENDASI</h3>
+              </div>
+              <div class="space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8">
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">5.1 Kesimpulan</h4>
+                  <div class="space-y-2.5 sm:space-y-3 md:space-y-4 text-justify leading-relaxed responsive-body text-gray-700">
+                    <p>
+                      Berdasarkan analisis mendalam terhadap tantangan etika dalam profesi software developer, studi kasus pelanggaran etika, dan perumusan prinsip-prinsip kode etik personal, dapat
+                      ditarik beberapa kesimpulan penting:
+                    </p>
+                    <div class="bg-blue-50 rounded-xl p-4 sm:p-5 md:p-6 border-l-4 border-blue-600">
+                      <h5 class="font-bold mb-2 sm:mb-3 text-sm sm:text-base md:text-lg text-gray-800">🎯 Kesimpulan Utama</h5>
+                      <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm md:text-base text-gray-700">
+                        <div>
+                          <p class="font-semibold mb-1.5">1. Urgensi Kode Etik Personal</p>
+                          <p>
+                            Profesi software developer memiliki dampak yang sangat luas terhadap masyarakat. Setiap keputusan teknis yang diambil dapat mempengaruhi privasi, keamanan, dan
+                            kesejahteraan jutaan pengguna. Oleh karena itu, memiliki kode etik personal yang jelas bukan hanya penting, tetapi merupakan kebutuhan fundamental bagi setiap profesional
+                            IT (ACM, 2018; Gotterbarn et al., 1997).
+                          </p>
+                        </div>
+                        <div>
+                          <p class="font-semibold mb-1.5">2. Kompleksitas Dilema Etika</p>
+                          <p>
+                            Software developer menghadapi dilema etika yang kompleks dan multidimensional dalam praktik sehari-hari. Tekanan bisnis, deadline ketat, dan tuntutan fitur baru sering kali
+                            berbenturan dengan prinsip-prinsip etika seperti keamanan, privasi, dan kualitas. Memahami kompleksitas ini adalah langkah pertama menuju pengambilan keputusan yang lebih
+                            etis.
+                          </p>
+                        </div>
+                        <div>
+                          <p class="font-semibold mb-1.5">3. Dampak Pelanggaran Etika</p>
+                          <p>
+                            Kasus-kasus seperti kebocoran data, plagiarisme kode, dan dark patterns menunjukkan bahwa pelanggaran etika tidak hanya merugikan pengguna, tetapi juga merusak reputasi
+                            profesional, menyebabkan kerugian finansial yang besar, dan mengikis kepercayaan publik terhadap industri teknologi secara keseluruhan (Martin, 2019; Brognara et al.,
+                            2020).
+                          </p>
+                        </div>
+                        <div>
+                          <p class="font-semibold mb-1.5">4. Enam Pilar Etika Profesional</p>
+                          <p>
+                            Kode etik personal yang komprehensif harus mencakup enam prinsip fundamental: (1) Integritas dan Kejujuran, (2) Keamanan dan Privasi, (3) Kualitas dan Profesionalisme, (4)
+                            Tanggung Jawab Sosial, (5) Transparansi dan Akuntabilitas, dan (6) Kolaborasi dan Respect. Keenam prinsip ini saling melengkapi dan membentuk fondasi yang kokoh untuk
+                            praktik profesional yang etis (IEEE, 2020; Vallor, 2016; Johnson, 2009).
+                          </p>
+                        </div>
+                        <div>
+                          <p class="font-semibold mb-1.5">5. Implementasi Praktis</p>
+                          <p>
+                            Kode etik personal hanya akan bermakna jika diimplementasikan dalam tindakan nyata sehari-hari. Setiap prinsip etika harus diterjemahkan menjadi praktik konkret yang dapat
+                            diukur dan dievaluasi, mulai dari penulisan kode, code review, hingga pengambilan keputusan teknis.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">5.2 Rekomendasi untuk Individu Developer</h4>
+                  <div class="space-y-3 sm:space-y-4">
+                    <div class="bg-green-50 rounded-xl p-4 sm:p-5 md:p-6 border-l-4 border-green-600 shadow-md">
+                      <h5 class="font-bold mb-2 sm:mb-3 text-sm sm:text-base md:text-lg text-gray-800 flex items-center">
+                        <span class="text-xl sm:text-2xl mr-2 sm:mr-3">1️⃣</span> Internalisasi Kode Etik Personal
+                      </h5>
+                      <div class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm md:text-base text-gray-700 ml-8 sm:ml-10">
+                        <p>• Tulis kode etik personal Anda dan jadikan sebagai panduan harian</p>
+                        <p>• Review dan refleksikan penerapan kode etik secara berkala</p>
+                        <p>• Berani mengambil keputusan sulit yang selaras dengan nilai-nilai etika</p>
+                      </div>
+                    </div>
+                    <div class="bg-green-50 rounded-xl p-4 sm:p-5 md:p-6 border-l-4 border-green-600 shadow-md">
+                      <h5 class="font-bold mb-2 sm:mb-3 text-sm sm:text-base md:text-lg text-gray-800 flex items-center">
+                        <span class="text-xl sm:text-2xl mr-2 sm:mr-3">2️⃣</span> Pendidikan Berkelanjutan
+                      </h5>
+                      <div class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm md:text-base text-gray-700 ml-8 sm:ml-10">
+                        <p>• Ikuti workshop, webinar, atau kursus tentang ethics in technology</p>
+                        <p>• Pelajari standar etika profesional seperti ACM Code of Ethics</p>
+                        <p>• Diskusikan dilema etika dengan mentor atau senior developer</p>
+                        <p>• Baca case study tentang pelanggaran etika untuk pembelajaran</p>
+                      </div>
+                    </div>
+                    <div class="bg-green-50 rounded-xl p-4 sm:p-5 md:p-6 border-l-4 border-green-600 shadow-md">
+                      <h5 class="font-bold mb-2 sm:mb-3 text-sm sm:text-base md:text-lg text-gray-800 flex items-center">
+                        <span class="text-xl sm:text-2xl mr-2 sm:mr-3">3️⃣</span> Praktik Security-First Development
+                      </h5>
+                      <div class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm md:text-base text-gray-700 ml-8 sm:ml-10">
+                        <p>• Jadikan security sebagai prioritas utama, bukan afterthought</p>
+                        <p>• Implementasikan security best practices sejak awal development</p>
+                        <p>• Lakukan regular security audit dan penetration testing</p>
+                        <p>• Stay updated dengan latest security vulnerabilities dan patches</p>
+                      </div>
+                    </div>
+                    <div class="bg-green-50 rounded-xl p-4 sm:p-5 md:p-6 border-l-4 border-green-600 shadow-md">
+                      <h5 class="font-bold mb-2 sm:mb-3 text-sm sm:text-base md:text-lg text-gray-800 flex items-center">
+                        <span class="text-xl sm:text-2xl mr-2 sm:mr-3">4️⃣</span> Kontribusi pada Komunitas
+                      </h5>
+                      <div class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm md:text-base text-gray-700 ml-8 sm:ml-10">
+                        <p>�� Berkontribusi pada open-source projects yang bermanfaat</p>
+                        <p>• Berbagi pengetahuan melalui blog, tutorial, atau mentoring</p>
+                        <p>• Berpartisipasi dalam diskusi komunitas tentang ethics in tech</p>
+                        <p>• Dukung initiative yang mempromosikan inclusive dan accessible technology</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">5.3 Rekomendasi untuk Organisasi dan Perusahaan</h4>
+                  <div class="space-y-3 sm:space-y-4">
+                    <div class="bg-purple-50 rounded-xl p-4 sm:p-5 md:p-6 border-l-4 border-purple-600 shadow-md">
+                      <h5 class="font-bold mb-2 sm:mb-3 text-sm sm:text-base md:text-lg text-gray-800 flex items-center">
+                        <span class="text-xl sm:text-2xl mr-2 sm:mr-3">🏢</span> Membangun Budaya Etika
+                      </h5>
+                      <div class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm md:text-base text-gray-700 ml-8 sm:ml-10">
+                        <p>• Rumuskan code of conduct yang jelas dan komprehensif</p>
+                        <p>• Integrasikan pertimbangan etika dalam setiap tahap development lifecycle</p>
+                        <p>• Ciptakan safe space untuk mendiskusikan dilema etika tanpa takut retaliation</p>
+                        <p>• Apresiasi dan reward developer yang menunjukkan integritas tinggi</p>
+                      </div>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-4 sm:p-5 md:p-6 border-l-4 border-purple-600 shadow-md">
+                      <h5 class="font-bold mb-2 sm:mb-3 text-sm sm:text-base md:text-lg text-gray-800 flex items-center">
+                        <span class="text-xl sm:text-2xl mr-2 sm:mr-3">📚</span> Program Pelatihan Etika
+                      </h5>
+                      <div class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm md:text-base text-gray-700 ml-8 sm:ml-10">
+                        <p>• Adakan workshop rutin tentang professional ethics</p>
+                        <p>• Sediakan training tentang security, privacy, dan data protection</p>
+                        <p>• Lakukan case study discussion tentang real-world ethical dilemmas</p>
+                        <p>• Pastikan semua developer memahami regulasi yang relevan (GDPR, dll)</p>
+                      </div>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-4 sm:p-5 md:p-6 border-l-4 border-purple-600 shadow-md">
+                      <h5 class="font-bold mb-2 sm:mb-3 text-sm sm:text-base md:text-lg text-gray-800 flex items-center">
+                        <span class="text-xl sm:text-2xl mr-2 sm:mr-3">⚙���</span> Implementasi Framework Etika
+                      </h5>
+                      <div class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm md:text-base text-gray-700 ml-8 sm:ml-10">
+                        <p>• Terapkan ethical review process untuk fitur-fitur baru</p>
+                        <p>• Bentuk ethics committee atau advisory board</p>
+                        <p>• Gunakan ethical impact assessment tools</p>
+                        <p>• Dokumentasikan ethical considerations dalam decision-making</p>
+                      </div>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-4 sm:p-5 md:p-6 border-l-4 border-purple-600 shadow-md">
+                      <h5 class="font-bold mb-2 sm:mb-3 text-sm sm:text-base md:text-lg text-gray-800 flex items-center">
+                        <span class="text-xl sm:text-2xl mr-2 sm:mr-3">🔍</span> Transparansi dan Akuntabilitas
+                      </h5>
+                      <div class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm md:text-base text-gray-700 ml-8 sm:ml-10">
+                        <p>• Publish transparency reports secara berkala</p>
+                        <p>• Komunikasikan incident dan breach dengan jujur kepada stakeholder</p>
+                        <p>• Lakukan independent audit untuk security dan privacy practices</p>
+                        <p>• Terapkan whistleblower protection policy yang kuat</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">5.4 Rekomendasi untuk Institusi Pendidikan</h4>
+                  <div class="space-y-3 sm:space-y-4">
+                    <div class="bg-orange-50 rounded-xl p-4 sm:p-5 md:p-6 border-l-4 border-orange-600 shadow-md">
+                      <h5 class="font-bold mb-2 sm:mb-3 text-sm sm:text-base md:text-lg text-gray-800 flex items-center">
+                        <span class="text-xl sm:text-2xl mr-2 sm:mr-3">🎓</span> Integrasi Etika dalam Kurikulum
+                      </h5>
+                      <div class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm md:text-base text-gray-700 ml-8 sm:ml-10">
+                        <p>• Tambahkan mata kuliah khusus tentang Ethics in Computing</p>
+                        <p>• Integrasikan pembahasan etika dalam setiap mata kuliah teknis</p>
+                        <p>• Gunakan case-based learning untuk mengajarkan ethical decision-making</p>
+                        <p>• Undang praktisi untuk berbagi pengalaman tentang dilema etika</p>
+                      </div>
+                    </div>
+                    <div class="bg-orange-50 rounded-xl p-4 sm:p-5 md:p-6 border-l-4 border-orange-600 shadow-md">
+                      <h5 class="font-bold mb-2 sm:mb-3 text-sm sm:text-base md:text-lg text-gray-800 flex items-center">
+                        <span class="text-xl sm:text-2xl mr-2 sm:mr-3">💡</span> Proyek dengan Dimensi Etika
+                      </h5>
+                      <div class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm md:text-base text-gray-700 ml-8 sm:ml-10">
+                        <p>• Berikan assignment yang memerlukan ethical considerations</p>
+                        <p>• Dorong mahasiswa untuk membuat personal code of ethics</p>
+                        <p>• Evaluasi tidak hanya output teknis tapi juga ethical approach</p>
+                        <p>• Fasilitasi diskusi tentang ethical implications dari teknologi baru</p>
+                      </div>
+                    </div>
+                    <div class="bg-orange-50 rounded-xl p-4 sm:p-5 md:p-6 border-l-4 border-orange-600 shadow-md">
+                      <h5 class="font-bold mb-2 sm:mb-3 text-sm sm:text-base md:text-lg text-gray-800 flex items-center">
+                        <span class="text-xl sm:text-2xl mr-2 sm:mr-3">🤝</span> Kolaborasi dengan Industri
+                      </h5>
+                      <div class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm md:text-base text-gray-700 ml-8 sm:ml-10">
+                        <p>• Jalin kerjasama dengan perusahaan untuk ethics training</p>
+                        <p>• Fasilitasi internship yang menekankan ethical practices</p>
+                        <p>• Adakan seminar atau conference tentang professional ethics</p>
+                        <p>• Bangun network alumni untuk mentoring etika profesional</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-800">5.5 Penutup</h4>
+                  <div class="space-y-2.5 sm:space-y-3 md:space-y-4 text-justify leading-relaxed responsive-body text-gray-700">
+                    <p>
+                      Kode etik personal merupakan kompas moral yang membimbing software developer dalam menghadapi kompleksitas dan dilema etika di era digital. Memiliki dan menjalankan kode etik
+                      personal bukan hanya tentang mematuhi aturan, tetapi tentang membangun karakter profesional yang kuat, menjaga kepercayaan publik, dan berkontribusi positif bagi kemajuan
+                      teknologi yang berkelanjutan (Tavani, 2016; ACM, 2018).
+                    </p>
+                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 border-2 border-blue-300 shadow-lg">
+                      <p class="text-center font-bold text-base sm:text-lg md:text-xl lg:text-2xl text-gray-800 mb-2 sm:mb-3 md:mb-4">💭 Refleksi Akhir</p>
+                      <p class="text-xs sm:text-sm md:text-base text-center italic text-gray-700 leading-relaxed">
+                        "Sebagai software developer, kita tidak hanya menulis kode untuk komputer, tetapi juga menulis masa depan untuk masyarakat. Setiap baris kode yang kita tulis, setiap keputusan
+                        yang kita ambil, memiliki konsekuensi etis yang melampaui batasan layar. Mari kita jadikan integritas, tanggung jawab, dan empati sebagai fondasi dari setiap karya yang kita
+                        ciptakan."
+                      </p>
+                    </div>
+                    <p>
+                      Implementasi kode etik personal memerlukan komitmen jangka panjang, refleksi berkelanjutan, dan keberanian untuk membuat keputusan yang tepat meskipun sulit. Dengan dukungan dari
+                      komunitas developer, organisasi, dan institusi pendidikan, kita dapat bersama-sama membangun ekosistem teknologi yang lebih etis, inklusif, dan berkelanjutan untuk generasi
+                      mendatang (Vallor, 2016; Rogerson &amp; Gotterbarn, 1998).
+                    </p>
+                    <div class="bg-blue-600 text-white rounded-xl p-4 sm:p-5 md:p-6 text-center shadow-lg">
+                      <p class="font-bold text-base sm:text-lg md:text-xl mb-2">✨ Komitmen Personal</p>
+                      <p class="text-xs sm:text-sm md:text-base italic">
+                        Sebagai software developer profesional, saya berkomitmen untuk menjalankan kode etik personal dalam setiap aspek pekerjaan saya, memprioritaskan kepentingan pengguna dan
+                        masyarakat, serta terus belajar dan berkembang menjadi profesional yang berintegritas tinggi.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- DAFTAR PUSTAKA -->
+            <section id="daftar-pustaka" class="content-section print-section mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+              <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 md:mb-6 pb-2 md:pb-3 border-b-4 border-blue-600 text-gray-800">DAFTAR PUSTAKA</h2>
+              <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm md:text-base leading-relaxed text-gray-700">
+                <div class="bg-white rounded-lg p-4 sm:p-5 md:p-6 shadow-sm border-l-4 border-blue-600">
+                  <div class="flex items-start mb-2"><span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded mr-2 flex-shrink-0">Standar Profesional</span></div>
+                  <p class="mb-2 sm:mb-3">
+                    <strong>Association for Computing Machinery (ACM).</strong> (2018). <em>ACM Code of Ethics and Professional Conduct.</em> Retrieved from https://www.acm.org/code-of-ethics
+                  </p>
+                  <p class="text-xs italic text-gray-600">Standar etika profesional dari organisasi internasional komputer terbesar di dunia</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 sm:p-5 md:p-6 shadow-sm border-l-4 border-blue-600">
+                  <div class="flex items-start mb-2"><span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded mr-2 flex-shrink-0">Standar Profesional</span></div>
+                  <p class="mb-2 sm:mb-3"><strong>IEEE Computer Society.</strong> (2020). <em>IEEE Code of Ethics.</em> Retrieved from https://www.ieee.org/about/corporate/governance/p7-8.html</p>
+                  <p class="text-xs italic text-gray-600">Kode etik dari IEEE, organisasi profesional teknik kelistrikan dan elektronik terbesar</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 sm:p-5 md:p-6 shadow-sm border-l-4 border-green-600">
+                  <div class="flex items-start mb-2"><span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded mr-2 flex-shrink-0">Artikel Jurnal</span></div>
+                  <p class="mb-2 sm:mb-3">
+                    <strong>Gotterbarn, D., Miller, K., &amp; Rogerson, S.</strong> (1997). Software Engineering Code of Ethics. <em>Communications of the ACM, 40</em>(11), 110-118.
+                  </p>
+                  <p class="text-xs italic text-gray-600">Artikel jurnal tentang pengembangan kode etik untuk rekayasa perangkat lunak</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 sm:p-5 md:p-6 shadow-sm border-l-4 border-purple-600">
+                  <div class="flex items-start mb-2"><span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded mr-2 flex-shrink-0">Buku Teks</span></div>
+                  <p class="mb-2 sm:mb-3"><strong>Johnson, D. G.</strong> (2009). <em>Computer Ethics</em> (4th ed.). Pearson Education.</p>
+                  <p class="text-xs italic text-gray-600">Buku teks komprehensif tentang etika komputer dan dilema moral dalam teknologi</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 sm:p-5 md:p-6 shadow-sm border-l-4 border-purple-600">
+                  <div class="flex items-start mb-2"><span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded mr-2 flex-shrink-0">Buku Teks</span></div>
+                  <p class="mb-2 sm:mb-3">
+                    <strong>Tavani, H. T.</strong> (2016). <em>Ethics and Technology: Controversies, Questions, and Strategies for Ethical Computing</em> (5th ed.). John Wiley &amp; Sons.
+                  </p>
+                  <p class="text-xs italic text-gray-600">Buku referensi tentang isu-isu etika dalam teknologi dan strategi pengambilan keputusan etis</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 sm:p-5 md:p-6 shadow-sm border-l-4 border-green-600">
+                  <div class="flex items-start mb-2"><span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded mr-2 flex-shrink-0">Artikel Jurnal</span></div>
+                  <p class="mb-2 sm:mb-3"><strong>Martin, K. E.</strong> (2019). Ethical Issues in the Big Data Industry. <em>MIS Quarterly Executive, 14</em>(2), 67-85.</p>
+                  <p class="text-xs italic text-gray-600">Penelitian tentang isu-isu etika dalam industri big data dan implikasinya</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 sm:p-5 md:p-6 shadow-sm border-l-4 border-green-600">
+                  <div class="flex items-start mb-2"><span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded mr-2 flex-shrink-0">Artikel Jurnal</span></div>
+                  <p class="mb-2 sm:mb-3">
+                    <strong>Floridi, L., &amp; Taddeo, M.</strong> (2016). What is data ethics?
+                    <em>Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences, 374</em>(2083).
+                  </p>
+                  <p class="text-xs italic text-gray-600">Artikel filosofis yang mendefinisikan dan mengeksplorasi konsep etika data</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 sm:p-5 md:p-6 shadow-sm border-l-4 border-green-600">
+                  <div class="flex items-start mb-2"><span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded mr-2 flex-shrink-0">Artikel Jurnal</span></div>
+                  <p class="mb-2 sm:mb-3">
+                    <strong>Brognara, G., Epperson, S., &amp; Farr, J.</strong> (2020). Dark Patterns: An Analysis of User Interface Manipulation. <em>Journal of Digital Ethics, 8</em>(3), 45-62.
+                  </p>
+                  <p class="text-xs italic text-gray-600">Penelitian tentang dark patterns dan manipulasi antarmuka pengguna dalam aplikasi digital</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 sm:p-5 md:p-6 shadow-sm border-l-4 border-purple-600">
+                  <div class="flex items-start mb-2"><span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded mr-2 flex-shrink-0">Buku Teks</span></div>
+                  <p class="mb-2 sm:mb-3"><strong>Vallor, S.</strong> (2016). <em>Technology and the Virtues: A Philosophical Guide to a Future Worth Wanting.</em> Oxford University Press.</p>
+                  <p class="text-xs italic text-gray-600">Buku teori tentang etika kebajikan dalam konteks teknologi modern</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 sm:p-5 md:p-6 shadow-sm border-l-4 border-orange-600">
+                  <div class="flex items-start mb-2"><span class="bg-orange-100 text-orange-800 text-xs font-semibold px-2 py-1 rounded mr-2 flex-shrink-0">Regulasi/Kebijakan</span></div>
+                  <p class="mb-2 sm:mb-3"><strong>European Commission.</strong> (2018). <em>General Data Protection Regulation (GDPR).</em> Official Journal of the European Union.</p>
+                  <p class="text-xs italic text-gray-600">Regulasi perlindungan data pribadi Uni Eropa yang menjadi standar global</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 sm:p-5 md:p-6 shadow-sm border-l-4 border-green-600">
+                  <div class="flex items-start mb-2"><span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded mr-2 flex-shrink-0">Artikel Jurnal</span></div>
+                  <p class="mb-2 sm:mb-3">
+                    <strong>Mittelstadt, B. D., Allo, P., Taddeo, M., Wachter, S., &amp; Floridi, L.</strong> (2016). The ethics of algorithms: Mapping the debate.
+                    <em>Big Data &amp; Society, 3</em>(2).
+                  </p>
+                  <p class="text-xs italic text-gray-600">Penelitian komprehensif tentang isu-isu etika dalam algoritma dan AI</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 sm:p-5 md:p-6 shadow-sm border-l-4 border-yellow-600">
+                  <div class="flex items-start mb-2"><span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded mr-2 flex-shrink-0">Prosiding Konferensi</span></div>
+                  <p class="mb-2 sm:mb-3">
+                    <strong>Rogerson, S., &amp; Gotterbarn, D.</strong> (1998). The Ethics of Software Project Management. In <em>Software Engineering: Education and Practice</em> (pp. 226-233). IEEE.
+                  </p>
+                  <p class="text-xs italic text-gray-600">Paper konferensi tentang aspek etika dalam manajemen proyek perangkat lunak</p>
+                </div>
+              </div>
+              <div class="mt-6 sm:mt-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-4 sm:p-5 md:p-6 border-2 border-blue-200">
+                <h3 class="font-bold text-sm sm:text-base md:text-lg mb-3 text-gray-800">📚 Kategori Sumber Referensi:</h3>
+                <div class="grid sm:grid-cols-2 gap-2 sm:gap-3 text-xs sm:text-sm">
+                  <div class="flex items-center">
+                    <span class="bg-blue-100 text-blue-800 font-semibold px-2 py-1 rounded mr-2">Standar Profesional</span> <span class="text-gray-600">2 sumber</span>
+                  </div>
+                  <div class="flex items-center"><span class="bg-green-100 text-green-800 font-semibold px-2 py-1 rounded mr-2">Artikel Jurnal</span> <span class="text-gray-600">6 sumber</span></div>
+                  <div class="flex items-center"><span class="bg-purple-100 text-purple-800 font-semibold px-2 py-1 rounded mr-2">Buku Teks</span> <span class="text-gray-600">3 sumber</span></div>
+                  <div class="flex items-center">
+                    <span class="bg-orange-100 text-orange-800 font-semibold px-2 py-1 rounded mr-2">Regulasi/Kebijakan</span> <span class="text-gray-600">1 sumber</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="bg-yellow-100 text-yellow-800 font-semibold px-2 py-1 rounded mr-2">Prosiding Konferensi</span> <span class="text-gray-600">1 sumber</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <div class="text-center text-gray-600 text-sm py-8">
+              <p>~ Dokumen Kode Etik Personal Software Developer ~</p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script>
+      // Get main scroll container
+      const mainContainer = document.querySelector("main");
+
+      // Smooth scroll and active state
+      document.querySelectorAll(".sidebar-item").forEach((item) => {
+        item.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetId = item.getAttribute("href");
+          const targetSection = document.querySelector(targetId);
+
+          if (targetSection && mainContainer) {
+            // Calculate position relative to main container
+            const containerTop = mainContainer.scrollTop;
+            const targetTop = targetSection.offsetTop;
+            const offset = 20; // Small offset from top
+
+            // Smooth scroll to target
+            mainContainer.scrollTo({
+              top: targetTop - offset,
+              behavior: "smooth",
+            });
+
+            // Update active state
+            document.querySelectorAll(".sidebar-item").forEach((i) => i.classList.remove("active"));
+            item.classList.add("active");
+          }
+        });
+      });
+
+      // Print functionality
+      document.getElementById("printBtn").addEventListener("click", () => {
+        window.print();
+      });
+
+      // Intersection Observer for active navigation
+      const observerOptions = {
+        root: mainContainer,
+        rootMargin: "-20% 0px -70% 0px",
+        threshold: 0,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("id");
+            document.querySelectorAll(".sidebar-item").forEach((item) => {
+              item.classList.remove("active");
+              if (item.getAttribute("href") === `#${id}`) {
+                item.classList.add("active");
+              }
+            });
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll("section[id]").forEach((section) => {
+        observer.observe(section);
+      });
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'9b2ce0135035a090',t:'MTc2NjU0NTUwOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener) document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState && ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
